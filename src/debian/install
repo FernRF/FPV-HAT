@@ -1,0 +1,4 @@
+tx /usr/bin/
+rx /usr/bin/
+tests/si4463info /usr/bin/
+tests/si4463sleep /usr/bin/

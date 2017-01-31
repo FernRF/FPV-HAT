@@ -1,0 +1,22 @@
+#ifndef PACKET_CONFIG_H
+#define PACKET_CONFIG_H
+
+#define GET_LEN(CMD, GROUP, ITEMS, ID, PKT_LEN, \
+                PKT_LEN_FIELD_SOURCE, PKT_LEN_ADJUST, \
+                PKT_TX_THRESHOLD, PKT_RX_THRESHOLD, \
+                PKT_FIELD_1_LENGTH_12_8, PKT_FIELD_1_LENGTH_7_0, \
+                PKT_FIELD_1_CONFIG, PKT_FIELD_1_CRC_CONFIG, \
+                PKT_FIELD_2_LENGTH_12_8, PKT_FIELD_2_LENGTH_7_0, \
+                PKT_FIELD_2_CONFIG)                                (PKT_FIELD_1_LENGTH_12_8 << 8) + PKT_FIELD_1_LENGTH_7_0
+
+#define PARSE__GET_LEN(A) GET_LEN(A)
+
+#define PKT_LEN(A) GET_LEN(A)
+
+
+#define PACKET_SIZE        PKT_LEN(RF_PKT_LEN_12)
+//#define PACKET_PREFIX_SIZE 1
+//#define DATA_SIZE          PACKET_SIZE - PACKET_PREFIX_SIZE
+
+
+#endif //PACKET_CONFIG_H

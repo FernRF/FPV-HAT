@@ -1,0 +1,14 @@
+Source: video-transfer
+Section: Communication
+Priority: extra
+Maintainer: Volodymyr Tarasenko <tvntsr@gmail.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.3
+Homepage: 
+#Vcs-Git: git://git.debian.org/collab-maint/video-transfer.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/video-transfer.git;a=summary
+
+Package: video-transfer
+Architecture: armhf
+Depends: ${shlibs:Depends}, ${misc:Depends}, wiringpi (>=2.0), libssl1.0.0 (>=1.0.0), libc6
+Description: Send/receive data using RF4463 chip
