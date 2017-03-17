@@ -1,4 +1,4 @@
-Source: video-transfer.868
+Source: video-transfer.915
 Section: Communication
 Priority: extra
 Maintainer: Volodymyr Tarasenko <tvntsr@gmail.com>
@@ -8,7 +8,7 @@ Homepage:
 #Vcs-Git: git://git.debian.org/collab-maint/video-transfer.git
 #Vcs-Browser: http://git.debian.org/?p=collab-maint/video-transfer.git;a=summary
 
-Package: video-transfer.868
+Package: video-transfer.915
 Architecture: armhf
 Depends: ${shlibs:Depends}, ${misc:Depends}, wiringpi (>=2.0), libssl1.0.0 (>=1.0.0), libc6
-Description: Send/receive data using RF4463 chip, frequency 868 MHz
+Description: Send/receive data using RF4463 chip

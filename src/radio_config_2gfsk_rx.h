@@ -2,7 +2,7 @@
  * @brief This file contains the automatically generated
  * configurations.
  *
- * @n WDS GUI Version: 3.2.9.0
+ * @n WDS GUI Version: 3.2.10.0
  * @n Device: Si4463 Rev.: B1                                 
  *
  * @b COPYRIGHT
@@ -21,7 +21,7 @@
 /*
 // Crys_freq(Hz): 30000000    Crys_tol(ppm): 20    IF_mode: 2    High_perf_Ch_Fil: 1    OSRtune: 0    Ch_Fil_Bw_AFC: 0    ANT_DIV: 0    PM_pattern: 0    
 // MOD_type: 3    Rsymb(sps): 500000    Fdev(Hz): 75000    RXBW(Hz): 150000    Manchester: 0    AFC_en: 0    Rsymb_error: 0.0    Chip-Version: 2    
-// RF Freq.(MHz): 868    API_TC: 29    fhst: 250000    inputBW: 0    BERT: 0    RAW_dout: 0    D_source: 0    Hi_pfm_div: 1    
+// RF Freq.(MHz): 915    API_TC: 29    fhst: 250000    inputBW: 0    BERT: 0    RAW_dout: 0    D_source: 0    Hi_pfm_div: 1    
 // 
 // # RX IF frequency is  -468750 Hz
 // # WB filter 5 (BW = 593.60 kHz);  NB-filter 5 (BW = 593.60 kHz)
@@ -38,7 +38,6 @@
 #define RADIO_CONFIGURATION_DATA_RADIO_DELAY_CNT_AFTER_RESET       0xF000
 #define RADIO_CONFIGURATION_DATA_CUSTOM_PAYLOAD					   {0xC5, 0xC5, 0xC5, 0xC5, 0xC5, 0xC5, 0xC5}
 
-#include "si446x_patch_b1.h"
 
 // CONFIGURATION COMMANDS
 
@@ -542,7 +541,7 @@
 //   FREQ_CONTROL_W_SIZE - Set window gating period (in number of crystal reference clock cycles) for counting VCO frequency during calibration.
 //   FREQ_CONTROL_VCOCNT_RX_ADJ - Adjust target count for VCO calibration in RX mode.
 */
-#define RF_FREQ_CONTROL_INTE_8 0x11, 0x40, 0x08, 0x00, 0x38, 0x0E, 0xEE, 0xEE, 0x22, 0x22, 0x20, 0xFF
+#define RF_FREQ_CONTROL_INTE_8 0x11, 0x40, 0x08, 0x00, 0x3C, 0x08, 0x00, 0x00, 0x22, 0x22, 0x20, 0xFF
 
 
 // AUTOMATICALLY GENERATED CODE! 
@@ -551,7 +550,6 @@
 
 #ifndef FIRMWARE_LOAD_COMPILE
 #define RADIO_CONFIGURATION_DATA_ARRAY { \
-        SI446X_PATCH_CMDS, \
         0x07, RF_POWER_UP, \
         0x08, RF_GPIO_PIN_CFG, \
         0x06, RF_GLOBAL_XO_TUNE_2, \

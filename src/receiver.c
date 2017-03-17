@@ -549,7 +549,7 @@ void* thread_function(void* arg)
 
 void help(const char* name)
 {
-    fprintf(stderr, "Usage:\n");
+    fprintf(stderr, "915 MHz version, usage:\n");
     fprintf(stderr, "\t%s [kKcsSpgirfmFhE]\n", name);
     fprintf(stderr, "\tSPI configuration:\n");
     fprintf(stderr, "\t\t-c [0|1] \t defines SPI channel\n");
