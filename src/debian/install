@@ -1,4 +1,4 @@
-tx /usr/bin/
-rx /usr/bin/
+sender /usr/bin/sender.868
+receiver /usr/bin/receiver.868
 tests/si4463info /usr/bin/
 tests/si4463sleep /usr/bin/

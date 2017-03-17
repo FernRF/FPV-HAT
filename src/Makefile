@@ -34,7 +34,7 @@ SI4463_OBJ = $(SI4463_SRC:.c=.o)
 
 LDLIBS += $(SI4463_OBJ)
 
-SRC = rx.c tx.c
+SRC = receiver.c sender.c
 
 OBJ = $(SRC:.c=.o)
 
