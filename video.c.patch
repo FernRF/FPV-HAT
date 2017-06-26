@@ -1,0 +1,57 @@
+diff --git a/opt/vc/src/hello_pi/hello_video/video.c b/opt/vc/src/hello_pi/hello_video/video.c
+index 1fec69d..7338f72 100644
+--- a/opt/vc/src/hello_pi/hello_video/video.c
++++ b/opt/vc/src/hello_pi/hello_video/video.c
+@@ -34,7 +34,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ #include "bcm_host.h"
+ #include "ilclient.h"
+ 
+-static int video_decode_test(char *filename)
++static int video_decode_test(FILE *in)
+ {
+    OMX_VIDEO_PARAM_PORTFORMATTYPE format;
+    OMX_TIME_CONFIG_CLOCKSTATETYPE cstate;
+@@ -42,16 +42,12 @@ static int video_decode_test(char *filename)
+    COMPONENT_T *list[5];
+    TUNNEL_T tunnel[4];
+    ILCLIENT_T *client;
+-   FILE *in;
+    int status = 0;
+    unsigned int data_len = 0;
+ 
+    memset(list, 0, sizeof(list));
+    memset(tunnel, 0, sizeof(tunnel));
+ 
+-   if((in = fopen(filename, "rb")) == NULL)
+-      return -2;
+-
+    if((client = ilclient_init()) == NULL)
+    {
+       fclose(in);
+@@ -211,12 +207,19 @@ static int video_decode_test(char *filename)
+ 
+ int main (int argc, char **argv)
+ {
+-   if (argc < 2) {
+-      printf("Usage: %s <filename>\n", argv[0]);
+-      exit(1);
+-   }
+-   bcm_host_init();
+-   return video_decode_test(argv[1]);
+-}
++    FILE* in;
+ 
++    if (argc == 2 && strcmp(argv[1], "--help") == 0) {
++        printf("Usage: %s <filename>\n", argv[0]);
++        exit(1);
++    }
+ 
++    if (argc < 2)
++        in = stdin;
++    else
++        if((in = fopen(argv[1], "rb")) == NULL)
++            return -2;
++
++    bcm_host_init();
++    return video_decode_test(in);
++}
